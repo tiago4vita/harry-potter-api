@@ -1,4 +1,4 @@
-package com.example.harypotterapi
+package com.example.harrypotter
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
