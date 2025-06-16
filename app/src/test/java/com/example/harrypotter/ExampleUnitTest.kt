@@ -1,4 +1,4 @@
-package com.example.harypotterapi
+package com.example.harrypotter
 
 import org.junit.Test
 
