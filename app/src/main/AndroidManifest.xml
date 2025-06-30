@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HaryPotterAPI"
+        android:theme="@style/Theme.HarryPotterAPI"
         tools:targetApi="31">
         <activity
             android:name="com.example.harrypotter.FeiticosActivity"
@@ -27,7 +27,7 @@
             android:name="com.example.harrypotter.PersonagemActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.harrypotter.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
