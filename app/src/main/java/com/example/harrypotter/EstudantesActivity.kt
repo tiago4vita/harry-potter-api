@@ -1,6 +1,7 @@
 package com.example.harrypotter
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,11 @@ class EstudantesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_estudantes)
 
         tvResult = findViewById(R.id.tvResult)
+
+        val btnVoltar = findViewById<Button>(R.id.btnVoltar)
+        btnVoltar.setOnClickListener {
+            finish()
+        }
 
         //getCharactersByHouse = retrofit.create(HarryPotterAPI::class.java)
     }
