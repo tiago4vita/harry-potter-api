@@ -15,6 +15,9 @@
         android:theme="@style/Theme.HarryPotterAPI"
         tools:targetApi="31">
         <activity
+            android:name="com.example.harrypotter.FeiticoDetail"
+            android:exported="false" />
+        <activity
             android:name="com.example.harrypotter.FeiticosActivity"
             android:exported="false" />
         <activity
