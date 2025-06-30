@@ -39,6 +39,11 @@ class FeiticosActivity : AppCompatActivity() {
             insets
         }
 
+        val btnVoltar = findViewById<Button>(R.id.btnVoltar)
+        btnVoltar.setOnClickListener {
+            finish()
+        }
+
         carregarFeiticos();
 
         listViewFeiticos.setOnItemClickListener { parent, view, position, id ->
