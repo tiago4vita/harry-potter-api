@@ -8,14 +8,89 @@
     android:background="#16FF0000"
     tools:context="com.example.harrypotter.EstudantesActivity">
 
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/rgHouses"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Estudantes vão aparecer aqui..."
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.144" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Selecione uma casa para pesquisar:"
+            android:textAlignment="center"
+            android:textColor="#951F1F"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rbGryffindor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Gryffindor" />
+
+        <RadioButton
+            android:id="@+id/rbSlytherin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Slytherin" />
+
+        <RadioButton
+            android:id="@+id/rbHufflepuff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Hufflepuff" />
+
+        <RadioButton
+            android:id="@+id/rbRavenclaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Ravenclaw" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConsultarCasa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#A40707"
+        android:text="Ver Estudantes na Casa"
+        app:icon="@drawable/castle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rgHouses" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/btnConsultarCasa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estudantes vão aparecer aqui..."
+            android:textColor="#350000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         val btnSair = findViewById<Button>(R.id.btnSair)
         btnSair.setOnClickListener {
                 finishAffinity()
+                android.os.Process.killProcess(android.os.Process.myPid())
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
