@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorOnPrimary">#ffffff</color>
+    <color name="background">#f2f4f8</color>
+    <color name="gryffindor">#aa1620</color>
+    <color name="ravenclaw">#2f779e</color>
+    <color name="hufflepuff">#ebc429</color>
+    <color name="slytherin">#2f6d3d</color>
 </resources>

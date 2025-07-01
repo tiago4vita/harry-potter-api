@@ -68,7 +68,7 @@ data class ProfessorInfo(
     val gender: String,
     val house: String,
     val dateOfBirth: String,
-    val yearOfBirth: String,
+    val yearOfBirth: Int,
     val wizard: Boolean,
     val ancestry: String,
     val eyeColour: String,
@@ -80,14 +80,14 @@ data class ProfessorInfo(
     val actor: String,
     @SerializedName("alternate_actors")
     val alternateActors: List<String> = emptyList(),
-    val alive: R.bool,
+    val alive: Boolean,
     val image: String
 )
 
 data class WandInfo(
     val wood: String,
     val core: String,
-    val length: Int
+    val length: Double?
 )
 
 data class SpellInfo(

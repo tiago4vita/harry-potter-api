@@ -21,9 +21,9 @@
         android:paddingBottom="0dp"
         android:text="Back"
         android:textAlignment="textStart"
-        android:textColor="@color/black"
+        android:textColor="@color/colorPrimary"
         app:icon="@drawable/baseline_arrow_back_24"
-        app:iconTint="@color/black"
+        app:iconTint="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
