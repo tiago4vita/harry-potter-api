@@ -8,90 +8,109 @@
     android:background="#16CA5959"
     tools:context="com.example.harrypotter.EstudantesActivity">
 
-    <RadioGroup
-        android:id="@+id/rgHouses"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="32dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView3"
+        <Button
+            android:id="@+id/btnVoltarDosEstudantes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Selecione uma casa para pesquisar:"
-            android:textAlignment="center"
-            android:textColor="#951F1F"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:background="@android:color/transparent"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="0dp"
+            android:text="Back"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimary"
+            app:icon="@drawable/baseline_arrow_back_24"
+            app:iconTint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <RadioButton
-            android:id="@+id/rbGryffindor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Gryffindor" />
-
-        <RadioButton
-            android:id="@+id/rbSlytherin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Slytherin" />
-
-        <RadioButton
-            android:id="@+id/rbHufflepuff"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Hufflepuff" />
-
-        <RadioButton
-            android:id="@+id/rbRavenclaw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="Ravenclaw" />
-
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/btnConsultarCasa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#A40707"
-        android:text="Ver Estudantes na Casa"
-        app:icon="@drawable/castle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rgHouses" />
-
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="16dp"
-        android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/btnConsultarCasa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <TextView
-            android:id="@+id/tvResult"
+        <RadioGroup
+            android:id="@+id/rgHouses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Estudantes vão aparecer aqui..."
-            android:textColor="#350000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </ScrollView>
+            android:layout_margin="16dp"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Pick a house"
+                android:textAlignment="center"
+                android:textColor="#951F1F"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rbGryffindor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Gryffindor" />
+
+            <RadioButton
+                android:id="@+id/rbSlytherin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Slytherin" />
+
+            <RadioButton
+                android:id="@+id/rbHufflepuff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Hufflepuff" />
+
+            <RadioButton
+                android:id="@+id/rbRavenclaw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="Ravenclaw" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnConsultarCasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#A40707"
+            android:text="Search"
+            app:icon="@drawable/castle" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Loading students..."
+                android:textColor="#350000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

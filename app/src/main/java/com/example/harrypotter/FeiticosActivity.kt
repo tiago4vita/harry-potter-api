@@ -39,11 +39,6 @@ class FeiticosActivity : AppCompatActivity() {
             insets
         }
 
-        val btnVoltar = findViewById<Button>(R.id.btnVoltar)
-        btnVoltar.setOnClickListener {
-            finish()
-        }
-
         carregarFeiticos();
 
         listViewFeiticos.setOnItemClickListener { parent, view, position, id ->
@@ -70,10 +65,10 @@ class FeiticosActivity : AppCompatActivity() {
                     )
                     listViewFeiticos.adapter = adapter
                 } else {
-                    Toast.makeText(this@FeiticosActivity, "Erro ao carregar feitiços", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@FeiticosActivity, "Erro loading spells", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@FeiticosActivity, "Erro: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@FeiticosActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }

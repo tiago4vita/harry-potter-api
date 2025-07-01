@@ -2,16 +2,12 @@ package com.example.harrypotter
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import com.example.harrypotter.api.HarryPotterAPI
 import com.example.harypotterapi.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,6 +19,7 @@ class EstudantesActivity : AppCompatActivity() {
     private lateinit var tvResult: TextView
     private lateinit var btnConsultarCasa: Button
     private lateinit var rgHouses: RadioGroup
+    private lateinit var btnVoltar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +29,11 @@ class EstudantesActivity : AppCompatActivity() {
         tvResult = findViewById(R.id.tvResult)
         btnConsultarCasa = findViewById(R.id.btnConsultarCasa)
         rgHouses = findViewById(R.id.rgHouses)
+        btnVoltar = findViewById<Button>(R.id.btnVoltarDosEstudantes)
+        btnVoltar.setOnClickListener {
+            finish()
+        }
+
 
         btnConsultarCasa.setOnClickListener {
             val selectedId = rgHouses.checkedRadioButtonId
@@ -70,16 +72,16 @@ class EstudantesActivity : AppCompatActivity() {
                         }
                         tvResult.text = namesBuilder.toString()
                     } else {
-                        tvResult.text = "Nenhum estudante encontrado."
+                        tvResult.text = "No students found."
                     }
                 } else {
-                    tvResult.text = "Erro: ${response.code()} ${response.message()}"
-                    Log.e("EstudantesActivity", "Erro na resposta: ${response.code()} ${response.message()}")
+                    tvResult.text = "Error: ${response.code()} ${response.message()}"
+                    Log.e("EstudantesActivity", "Error: ${response.code()} ${response.message()}")
                 }
 
             } catch (e: Exception) {
-                Log.e("EstudantesActivity", "Erro ao carregar estudantes", e)
-                tvResult.text = "Ocorreu um erro ao carregar estudantes."
+                Log.e("EstudantesActivity", "Failed to load students", e)
+                tvResult.text = "Error loading students."
             }
         }
     }
@@ -100,15 +102,14 @@ class EstudantesActivity : AppCompatActivity() {
                         }
                         tvResult.text = builder.toString()
                     } else {
-                        tvResult.text = "Nenhum personagem encontrado na casa $houseName."
+                        tvResult.text = "No students found in $houseName."
                     }
                 } else {
-                    tvResult.text = "Erro: ${response.code()} ${response.message()}"
+                    tvResult.text = "Error: ${response.code()} ${response.message()}"
                 }
 
             } catch (e: Exception) {
-                Log.e("EstudantesActivity", "Erro ao carregar personagens", e)
-                tvResult.text = "Erro ao carregar personagens."
+                tvResult.text = "Error loading students."
             }
         }
     }

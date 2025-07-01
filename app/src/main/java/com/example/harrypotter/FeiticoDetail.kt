@@ -24,8 +24,8 @@ class FeiticoDetail : AppCompatActivity() {
             insets
         }
 
-        val nome = intent.getStringExtra("spellName") ?: "Feitiço desconhecido"
-        val descricao = intent.getStringExtra("spellDescription") ?: "Sem descrição"
+        val nome = intent.getStringExtra("spellName") ?: "Unknown spell"
+        val descricao = intent.getStringExtra("spellDescription") ?: "No description available"
         textViewNomeFeitico = findViewById<TextView>(R.id.textViewNomeFeitico)
         textViewDescricaoFeitico = findViewById<TextView>(R.id.textViewDescricaoFeitico)
         textViewNomeFeitico.text = nome;

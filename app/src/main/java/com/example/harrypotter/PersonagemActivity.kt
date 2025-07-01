@@ -41,7 +41,7 @@ class PersonagemActivity : AppCompatActivity() {
         tvResultado = findViewById(R.id.tvResultado)
         imagePersonagem = findViewById(R.id.imagePersonagem)
         
-        val btnVoltar = findViewById<Button>(R.id.btnVoltar)
+        val btnVoltar = findViewById<Button>(R.id.btnVoltarHomeDoPersonagemPorId)
         btnVoltar.setOnClickListener {
             finish()
         }
@@ -51,7 +51,7 @@ class PersonagemActivity : AppCompatActivity() {
             if (personagemId.isNotEmpty()) {
                 buscarPersonagem(personagemId)
             } else {
-                Toast.makeText(this, "Por favor, insira um ID válido", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Type in a valid ID", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -65,23 +65,23 @@ class PersonagemActivity : AppCompatActivity() {
                     if (!personagens.isNullOrEmpty()) {
                         exibirResultado(personagens[0])
                     } else {
-                        tvResultado.text = "Personagem não encontrado"
+                        tvResultado.text = "Character not found"
                     }
                 } else {
-                    tvResultado.text = "Erro ao buscar personagem: ${response.code()}"
+                    tvResultado.text = "Failed to fetch character: ${response.code()}"
                 }
             } catch (e: Exception) {
-                tvResultado.text = "Erro: ${e.message}"
-                Toast.makeText(this@PersonagemActivity, "Erro na conexão", Toast.LENGTH_SHORT).show()
+                tvResultado.text = "Error: ${e.message}"
+                Toast.makeText(this@PersonagemActivity, "Connection error", Toast.LENGTH_SHORT).show()
             }
         }
     }
     
     private fun exibirResultado(personagem: PersonagemInfo) {
         val resultado = """
-            Nome: ${personagem.name}
-            Espécie: ${personagem.species}
-            Casa: ${personagem.house}
+            Name: ${personagem.name}
+            Species: ${personagem.species}
+            Hogwarts house: ${personagem.house}
         """.trimIndent()
         tvResultado.text = resultado
 
