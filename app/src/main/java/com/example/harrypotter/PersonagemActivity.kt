@@ -61,9 +61,9 @@ class PersonagemActivity : AppCompatActivity() {
             try {
                 val response = RetrofitClient.api.getPersonagemInfo(personagemId)
                 if (response.isSuccessful) {
-                    val personagem = response.body()
-                    if (personagem != null) {
-                        exibirResultado(personagem)
+                    val personagens = response.body()
+                    if (!personagens.isNullOrEmpty()) {
+                        exibirResultado(personagens[0])
                     } else {
                         tvResultado.text = "Personagem não encontrado"
                     }

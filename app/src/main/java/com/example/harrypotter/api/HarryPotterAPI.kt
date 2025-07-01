@@ -11,7 +11,7 @@ interface HarryPotterAPI {
     @GET("character/{personagemId}")
     suspend fun getPersonagemInfo(
         @Path("personagemId") personagemId: String
-    ): Response<PersonagemInfo>
+    ): Response<List<PersonagemInfo>>
 
     @GET("characters/staff")
     suspend fun getAllProfessores(): Response<List<ProfessorInfo>>
