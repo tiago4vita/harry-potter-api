@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#16CA5959"
+    android:background="#16FF0000"
     tools:context="com.example.harrypotter.EstudantesActivity">
 
     <RadioGroup
@@ -69,7 +69,6 @@
         android:text="Ver Estudantes na Casa"
         app:icon="@drawable/castle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rgHouses" />
 

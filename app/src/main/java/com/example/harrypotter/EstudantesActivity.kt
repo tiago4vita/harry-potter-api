@@ -52,12 +52,6 @@ class EstudantesActivity : AppCompatActivity() {
 
         carregarEstudantes()
 
-        val btnVoltar = findViewById<Button>(R.id.btnVoltar)
-        btnVoltar.setOnClickListener {
-            finish()
-        }
-
-        //getCharactersByHouse = retrofit.create(HarryPotterAPI::class.java)
     }
 
     private fun carregarEstudantes() {
