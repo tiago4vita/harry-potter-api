@@ -19,6 +19,7 @@ import kotlinx.coroutines.launch
 class FeiticosActivity : AppCompatActivity() {
     private lateinit var listViewFeiticos: ListView
     private var feiticos = listOf<SpellInfo>()
+    private lateinit var btnVoltar: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,11 @@ class FeiticosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_feiticos)
 
         listViewFeiticos = findViewById<ListView>(R.id.listViewFeiticos)
+
+        btnVoltar = findViewById<Button>(R.id.btnVoltarHome)
+        btnVoltar.setOnClickListener {
+            finish()
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
