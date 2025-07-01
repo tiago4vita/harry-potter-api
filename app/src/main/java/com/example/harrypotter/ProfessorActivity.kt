@@ -49,61 +49,10 @@ class ProfessorActivity : AppCompatActivity() {
             insets
         }
 
-        listViewProfessores = findViewById<ListView>(R.id.listViewProfessores)
-        loader = findViewById<TextView>(R.id.textViewLoading)
-        searchViewProfessores = findViewById<SearchView>(R.id.searchViewProfessor)
-        cardProfessor = findViewById<CardView>(R.id.cardViewProfessor)
-        nomeProfessor = findViewById<TextView>(R.id.textViewNomeProfessor)
-        imagemProfessor = findViewById<ImageView>(R.id.imageViewProfessor)
-        nomesAlternativos = findViewById<TextView>(R.id.textViewNomesAlternativos)
-        especieProfessor = findViewById<TextView>(R.id.textViewEspecie)
-        casaProfessor = findViewById<TextView>(R.id.textViewCasa)
-
-        btnVoltar = findViewById<Button>(R.id.btnVoltarHomeDoProfessor)
+        val btnVoltar = findViewById<Button>(R.id.btnVoltar)
         btnVoltar.setOnClickListener {
             finish()
         }
-
-        carregarProfessores()
-
-        searchViewProfessores.setOnQueryTextListener(
-            object: SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    return false;
-                }
-
-                override fun onQueryTextChange(query: String?): Boolean {
-                    val inputString = query?.trim().orEmpty()
-                    val resultados = professores.filter {
-                        it.name.contains(inputString, ignoreCase = true)
-                    }
-                    when (resultados.size) {
-                        0 -> {
-                            listViewProfessores.adapter = null
-                            listViewProfessores.visibility = View.GONE
-                            cardProfessor.visibility = View.GONE
-                            Toast.makeText(this@ProfessorActivity, "Professor not found", Toast.LENGTH_LONG).show()
-                        }
-                        1 -> {
-                            listViewProfessores.adapter = null
-                            listViewProfessores.visibility = View.GONE
-                            mostrarInfo(resultados[0])
-                        }
-                        else -> {
-                            cardProfessor.visibility = View.GONE;
-                            val professoresFiltrados = resultados.map { it.name }
-                            listViewProfessores.visibility = View.VISIBLE;
-                            val adapter = ArrayAdapter(
-                                this@ProfessorActivity,
-                                android.R.layout.simple_list_item_1,
-                                professoresFiltrados)
-                            listViewProfessores.adapter = adapter
-                        }
-                    }
-                    return false
-                }
-            }
-        )
     }
 
     private fun carregarProfessores() {
